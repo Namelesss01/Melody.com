@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Melody Home Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+			<a class="navbar-brand" href="../index.html"><img src="img/logo.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li>
+						<!--Search Bar -->
+						<!-- <form class="form-inline">
+							<input class="form-control mr-sm-2" type="search" placeholder="music, album, artist..." aria-label="Search">
+							<button class="btn btn-info" type="button" onclick="go_search()">
+								<span class="glyphicon glyphicon-search"></span> Search Music
+							</button> 
+						</form> -->
+					</li>
+					<li>
+					</li>
+				</ul>
+
+			</div>
+	</div>
+
+	<script type="text/javascript">
+		function go_search(){
+			window.location = "./search/search.html"
+		}
+	</script>
+
+</nav>
+<!--- Image Slider -->
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1" class="active"></li>
+		<li data-target="#slides" data-slide-to="2" class="active"></li>
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="img/slide1.jpeg">
+			<div class="carousel-caption">
+				<h1 class="display-2">melody</h1>
+				<h3>Pick the music you love</h3>
+				<button class="btn btn-info" type="button" onclick="go_search()">
+					<span class="glyphicon glyphicon-search"></span> Search Music
+				</button> 
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img src="img/slide2.png">
+			
+			</div>
+		</div>
+		<div class="carousel-item">
+			
+			<img src="img/slide3.png">
+			
+		</div>
+	</div>
+</div>
+<!--- Footer -->
+<!--- Footer -->
+								<footer>
+								<div class="container-fluid padding">
+								<div class="row text-center">
+									<!--<div class="col-md-4"> -->
+										<!-- <img src="img/w3newbie.png" alt=""> -->
+										<!--<hr class="light"> -->
+										<!--<p>2132691234</p>
+										<p>1234@gmail.com</p>
+										<p>1234 W12 St. CA 90007</p> -->
+									<!-- </div> -->
+									<!-- <div class="col-md-4">
+										<hr class="light">
+										<p>Our hours</p>
+										<hr class="light">
+										<p>Moday: 5am-9pm</p>
+										<p>Saturday: 10am-2am</p>
+										<p>Sunday: Closed</p>
+									</div> -->
+									<!--<div class="col-md-4">
+										<hr class="light">
+										<p>Service Areas</p>
+										<hr class="light">
+										<p>LA, CA, 90007</p>
+										<p>LA, CA, 90007</p>
+										<p>LA, CA, 90007</p> 
+									</div> -->
+									<div class="col-12">
+										<hr class="light-100">
+										<h5>&copy; melody.com</h5>
+									</div> 
+								</div>
+								</div>
+								</footer>
+							
+</body>
+</html>

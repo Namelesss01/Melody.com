@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+					<div class="sidebar-header">
+							<!--- Toggle button -->
+							<button type="button" id="sidebarCollapse" class="btn btn-info">
+									<i class="fas fa-align-left"></i>
+							</button>
+					</div>
+
+					<ul class="list-unstyled components">
+							<li>
+									<a href="#artistSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+											<i class="fa fa-user-circle"></i>
+											Artist
+									</a>
+									<ul class="collapse list-unstyled" id="artistSubmenu">
+									</ul>
+							</li>
+							<li>
+									<a href="#albumSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+											<i class="fas fa-image"></i>
+											Album
+									</a>
+									<ul class="collapse list-unstyled" id="albumSubmenu">
+									</ul>
+							</li>
+							<li>
+									<a href="#genreSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+											<i class="fa fa-paper-plane"></i>
+											Genre
+									</a>
+									<ul class="collapse list-unstyled" id="genreSubmenu">
+									</ul>
+							</li>
+							<li>
+									<a href="#yearSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+											<i class="fa fa-calendar"></i>
+											Year
+									</a>
+									<ul class="collapse list-unstyled" id="yearSubmenu">
+									</ul>
+							</li>
+							<!-- <button class="btn btn-info" id="searchBtn" type="button">
+								<span class="glyphicon glyphicon-search"></span>Facet Search
+							</button> -->
+					</ul>
+        </nav>
+				<!-- Page Content  -->
+				<div id="content">
+						<!-- Navigation -->
+						<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+							<div class="container-fluid">
+									<!--- Logo -->
+									<a class="navbar-brand" href="../index.html"><img src="img/logo.png"></a>
+									<!--- Search Bar -->
+									<input class="form-control mr-sm-2" type="search" placeholder="music, album, artist..." aria-label="Search" id="searchIn">
+									<button class="btn btn-info" id="searchBtn" type="button">
+										<span class="glyphicon glyphicon-search"></span> Search
+									</button>
+							</div>
+						</nav>
+
+						<div id="wrapper">
+							<!--- Main Content -->
+							<div id="page-content-wrapper">
+								<!--- Cards -->
+								<div class="container-fluid padding">
+									<div class="row padding">
+										<div class="col-md-4">
+											<div class="card">
+												<img class="card-img-top" src="img/album_768x768/album1.jpg">
+												<div class="card-body">
+													<h4 class="card-title">Adele</h4>
+													<p class="card-text">Rolling in the deep</p>
+													<a href="#" class="btn btn-outline-secondary">See Profile</a>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="card">
+												<img class="card-img-top" src="img/album_768x768/album2.jpg">
+												<div class="card-body">
+													<h4 class="card-title">Cold Play </h4>
+													<p class="card-text">Yellow</p>
+													<a href="#" class="btn btn-outline-secondary">See Profile</a>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="card">
+												<img class="card-img-top" src="img/album_768x768/album3.jpg">
+												<div class="card-body">
+													<h4 class="card-title">Ed Sheeran</h4>
+													<p class="card-text">Photograph</p>
+													<a href="#" class="btn btn-outline-secondary">See Profile</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--- Song List -->
+								<table class="table table-songs">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Song</th>
+											<th></th>
+											<th>Artist</th>
+											<th>Album</th>
+											<th>Genre</th>
+											<th>Year</th>
+											<th>Duration</th>
+											<th>Link</th>
+										</tr>
+									</thead>
+									<tbody id="songlist">
+										<!--- Song example in table
+										<tr tabindex="1">
+											<td>
+												<a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+													<span class="fa fa-play fa-stack-1x"></span>
+													<span class="fa fa-circle-thin fa-stack-2x"></span>
+												</a>
+											</td>
+											<td><span class="fa fa-check"></span></td>
+											<td>Memory</td>
+											<td>Sugarcult</td>
+											<td>Palm Trees and Power Lines</td>
+											<td class="secondary-info">2016-07-23</td>
+											<td class="secondary-info">3:54</td>
+										</tr>
+										-->
+									</tbody>
+								</table>
+
+
+								<!--- Footer -->
+								<footer>
+								<div class="container-fluid padding">
+								<div class="row text-center">
+									<div class="col-md-4">
+										<img src="img/w3newbie.png" alt="">
+										<hr class="light">
+										<p>2132691234</p>
+										<p>1234@gmail.com</p>
+										<p>1234 W12 St. CA 90007</p>
+									</div>
+									<div class="col-md-4">
+										<hr class="light">
+										<p>Our hours</p>
+										<hr class="light">
+										<p>Moday: 5am-9pm</p>
+										<p>Saturday: 10am-2am</p>
+										<p>Sunday: Closed</p>
+									</div>
+									<div class="col-md-4">
+										<hr class="light">
+										<p>Service Areas</p>
+										<hr class="light">
+										<p>LA, CA, 90007</p>
+										<p>LA, CA, 90007</p>
+										<p>LA, CA, 90007</p>
+									</div>
+									<div class="col-12">
+										<hr class="light-100">
+										<h5>&copy; w3newbie.com</h5>
+									</div>
+								</div>
+								</div>
+								</footer>
+							</div>
+						</div>
+
+					</div>
+
+
+
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.15.2/URI.min.js"></script>
+
+<a id="dynamicLink" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.w3schools.com-3FuserName-3Dtest-26someOtherKey-3Dval&d=DwMGAg&c=clK7kQUTWtAVEOVIgvi0NU5BOUHhpN0H8p7CSfnc_gI&r=96pfU7NQgT5UceGb2brIpw&m=-DkZADZ98E5GJXerj3Y7gafI5yHNzRL0u_ycLTL6VQU&s=-L5UT_9QwndoHwBycczz8ukrLPEw6wDi9PY-7_izYug&e=">Visit W3Schools</a>
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBcclFdysIXSSzVVSir5T3h0IMIbRYGqU4",
+		    authDomain: "fir-50e64.firebaseapp.com",
+		    databaseURL: "https://fir-50e64.firebaseio.com",
+		    projectId: "fir-50e64",
+		    storageBucket: "fir-50e64.appspot.com",
+		    messagingSenderId: "278113726117"
+		  };
+		  firebase.initializeApp(config);
+
+			/*
+			<td>\
+				<a href=\"#\" tabindex=\"0\" class=\"play-btn fa-stack fa-lg\">\
+					<span class=\"fa fa-play fa-stack-1x\"></span>\
+					<span class=\"fa fa-circle-thin fa-stack-2x\"></span>\
+				</a>\
+			</td>\
+			*/
+			/* real mp3 player
+			<td><audio controls>\
+				<source src=\"Coldplay - Viva La Vida.mp3\" type=\"audio/mpeg\">\
+			Your browser does not support the audio element.\
+			</audio></td>\
+			*/
+
+		 	// Format for html of a single song
+			function getSongHtmlFormat(item) {
+				var url=item["link"];
+
+				var song = "<tr tabindex=\"1\">\
+											<td><span class=\"fa fa-check\"></span></td>\
+											<td>" + item["title"] + "</td>\
+											<td>" + " "+ "</td>\
+											<td>" + item["artist"]+ "</td>\
+											<td>" + item["album"] + "</td>\
+											<td>" + item["genre"] + "</td>\
+											<td class=\"secondary-info\">" + item["year"] + "</td>\
+											<td class=\"secondary-info\">" + item["duration"] + "</td>\
+											<td class=\"secondary-info\"><a id=\"dynamiclink\" href=\""+url+"\" download>link</a></td>\
+										</tr>";
+			    return song;
+			    // Get our <a> element
+	
+			}
+			//function myfunc(item){
+			//	document.getElementById("dynamiclink").innerHTML = item["link"];
+			//}
+
+    	
+
+			// Check if keyword appears in the metadata
+			function checkIfMatch(itemVal, keywords) {
+			    if (keywords=="") return true;
+					for(i=0;i<keywords.length;i++){
+						if(itemVal.title!=null && itemVal.title.search(new RegExp(keywords[i], "i"))!=-1) return true;
+						if(itemVal.artist!=null && itemVal.artist.search(new RegExp(keywords[i], "i"))!=-1) return true;
+						if(itemVal.album!=null && itemVal.album.search(new RegExp(keywords[i], "i"))!=-1) return true;
+						if(itemVal.year!=null && itemVal.year.search(new RegExp(keywords[i], "i"))!=-1) return true;
+						if(itemVal.genre!=null && itemVal.genre.search(new RegExp(keywords[i], "i"))!=-1) return true;
+					}
+					return false
+			}
+
+			//Get the valuse in checked checkbox
+			function getCheckedValue(checkboxid){
+				var checks = [];
+				var chkboxs = document.querySelectorAll("#" +checkboxid+ " li a input");
+				chkboxs.forEach(function(box) {
+					if(box.checked==true)checks.push(box.value);
+				});
+				return checks;
+			}
+
+			function filteredOutSongs(inputsonglist, valuesArray, category){
+				if (valuesArray.length==0){
+					//Empty checks = All checked
+					return inputsonglist;
+				}
+				ret = []
+				for(i=0;i<inputsonglist.length;i++){
+					var found = false;
+					for(j=0;j<valuesArray.length;j++){
+						if(valuesArray[j]==inputsonglist[i][category]){
+							found = true;
+							break;
+						}
+					}
+					if(found==true)ret.push(inputsonglist[i]);
+				}
+				return ret;
+			}
+
+
+			function toggleCheckbox() {
+				var filterdsonglist = [];
+				songlist.forEach(function(item) {filterdsonglist.push(item)});
+
+				var artistChecks = getCheckedValue("artistSubmenu");
+ 				var albumChecks = getCheckedValue("albumSubmenu");
+ 				var yearChecks = getCheckedValue("yearSubmenu");
+ 				var genreChecks = getCheckedValue("genreSubmenu");
+
+				if(artistChecks!=[] || albumChecks!=[] || yearChecks!=[] || genreChecks!=[]){
+					if(artistChecks!=[]) filterdsonglist = filteredOutSongs(filterdsonglist, artistChecks, "artist");
+					if(albumChecks!=[]) filterdsonglist = filteredOutSongs(filterdsonglist, albumChecks, "album");
+					if(yearChecks!=[]) filterdsonglist = filteredOutSongs(filterdsonglist, yearChecks, "year");
+					if(genreChecks!=[]) filterdsonglist = filteredOutSongs(filterdsonglist, genreChecks, "genre");
+				}
+
+				//Dynamic refresh song list
+				document.getElementById('songlist').innerHTML = "";
+				filterdsonglist.forEach(function(item) {
+					document.getElementById('songlist').innerHTML += getSongHtmlFormat(item);
+				});
+			}
+
+			var dbRef = firebase.database().ref().child("mp3/music");
+			var songlist = [];
+			var artistSet = new Set();
+			var albumSet = new Set();
+			var yearSet = new Set();
+			var genreSet = new Set();
+
+      $(document).ready(function () {
+          $('#sidebarCollapse').on('click', function () {
+              $('#sidebar').toggleClass('active');
+						});
+					$('#searchBtn').on('click', function () {
+						//0.Reset showing array and songlist
+						songlist = [];
+						artistSet = new Set();
+						albumSet = new Set();
+						yearSet = new Set();
+						genreSet = new Set();
+
+						//1.Retrieve the keyword
+						var keywords = document.getElementById('searchIn').value.split(" ");
+						//var keywords = document.getElementById('searchIn');
+						dbRef.once("value").then(function(snapshot) {
+							snapshot.forEach(function(item) {
+								var itemVal = item.val();
+								if(checkIfMatch(itemVal, keywords)){
+									document.getElementById('songlist').innerHTML += getSongHtmlFormat(itemVal);
+									songlist.push({
+										"title":(itemVal.title==null) ? "N.A." : itemVal.title,
+										"artist":(itemVal.artist==null) ? "N.A." : itemVal.artist,
+										"album":(itemVal.album==null) ? "N.A." : itemVal.album,
+										"year":(itemVal.year==null) ? "N.A." : itemVal.year,
+										"genre":(itemVal.genre==null) ? "N.A." : itemVal.genre,
+										"duration":(itemVal.duration==null) ? "N.A." : itemVal.duration,
+										"link":(itemVal.link==null) ? "N.A." : itemVal.link
+									})
+									artistSet.add((itemVal.artist==null) ? "N.A." : itemVal.artist);
+									albumSet.add((itemVal.album==null) ? "N.A." : itemVal.album);
+									yearSet.add((itemVal.year==null) ? "N.A." : itemVal.year);
+									genreSet.add((itemVal.genre==null) ? "N.A." : itemVal.genre);
+
+								}
+							});
+						}).then(function(){
+									//Dynamic refresh song list
+									document.getElementById('songlist').innerHTML = "";
+									songlist.forEach(function(item) {
+										document.getElementById('songlist').innerHTML += getSongHtmlFormat(item);
+									});
+						}).then(function(){
+									//Dynamic refresh option of facet search
+									document.getElementById('artistSubmenu').innerHTML = ""
+									artistSet.forEach(function(item) {
+										document.getElementById('artistSubmenu').innerHTML += "<li><a><input type=\"checkbox\" value=\""+ item +"\" id=\""+ item.toLowerCase() +"\"  onchange=\"toggleCheckbox()\">"+ item +"</a></li>";
+									});
+									document.getElementById('albumSubmenu').innerHTML = ""
+									albumSet.forEach(function(item) {
+										document.getElementById('albumSubmenu').innerHTML += "<li><a><input type=\"checkbox\" value=\""+ item +"\" id=\""+ item.toLowerCase() +"\"  onchange=\"toggleCheckbox()\">"+ item +"</a></li>";
+									});
+									document.getElementById('yearSubmenu').innerHTML = ""
+									yearSet.forEach(function(item) {
+										document.getElementById('yearSubmenu').innerHTML += "<li><a><input type=\"checkbox\" value=\""+ item +"\" id=\""+ item.toLowerCase() +"\"  onchange=\"toggleCheckbox()\">"+ item +"</a></li>";
+									});
+									document.getElementById('genreSubmenu').innerHTML = ""
+									genreSet.forEach(function(item) {
+										document.getElementById('genreSubmenu').innerHTML += "<li><a><input type=\"checkbox\" value=\""+ item +"\" id=\""+ item.toLowerCase() +"\"  onchange=\"toggleCheckbox('genreSubmenu')\">"+ item +"</a></li>";
+									});
+						});
+
+
+					});
+      });
+    </script>
+</body>
+
+</html>
